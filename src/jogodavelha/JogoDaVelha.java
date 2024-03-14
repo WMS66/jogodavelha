@@ -28,12 +28,21 @@ public class JogoDaVelha extends JFrame{
 		bt[0].addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
+				mudar(bt[0]);
 				
 			}
 		});
 	}
 	
-	
+	public void mudar(JButton btn) {
+		if(xo) {
+			btn.setText("O");
+			xo = false;
+		}else {
+			btn.setText("X");
+			xo = true;
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
