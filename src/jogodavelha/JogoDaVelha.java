@@ -7,6 +7,7 @@ public class JogoDaVelha extends JFrame{
 	
 	JButton[] bt = new JButton[9];
 	boolean xo = false;
+	boolean[] click = new boolean[9];
 	
 	public JogoDaVelha() {
 		
@@ -25,11 +26,17 @@ public class JogoDaVelha extends JFrame{
 				cont++;
 			}
 		}
+		for (int i = 0; i < 9; i++) {
+		click[i] = false;	
+		}
+		
 		bt[0].addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
-				mudar(bt[0]);
-				
+				if(click[0] == false) {
+					click[0] = true;
+					mudar(bt[0]);
+				}
 			}
 		});
 	}
