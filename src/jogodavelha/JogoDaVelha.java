@@ -123,6 +123,7 @@ public class JogoDaVelha extends JFrame{
 			btn.setText("X");
 			xo = true;
 		}
+		ganhou();
 	}
 
 	public void ganhou() {
@@ -134,10 +135,30 @@ public class JogoDaVelha extends JFrame{
 			||(bt[2].getText() == "X" && bt[5].getText() == "X" && bt[8].getText() == "X") 
 			||(bt[0].getText() == "X" && bt[4].getText() == "X" && bt[8].getText() == "X") 
 			||(bt[6].getText() == "X" && bt[4].getText() == "X" && bt[2].getText() == "X")) {
-		JOptionPane.showMessageDialog(null, "X ganhou !!!");
+		JOptionPane.showMessageDialog(null, "X Ganhou !!!");
 		
+		limpar();
 		
-	}	
+		}else if ((bt[0].getText() == "O" && bt[1].getText() == "X" && bt[2].getText() == "X") 
+				||(bt[3].getText() == "O" && bt[4].getText() == "X" && bt[5].getText() == "X") 
+				||(bt[6].getText() == "O" && bt[7].getText() == "X" && bt[8].getText() == "X")
+				||(bt[0].getText() == "O" && bt[3].getText() == "X" && bt[6].getText() == "X") 
+				||(bt[1].getText() == "O" && bt[4].getText() == "X" && bt[7].getText() == "X") 
+				||(bt[2].getText() == "O" && bt[5].getText() == "X" && bt[8].getText() == "X") 
+				||(bt[0].getText() == "O" && bt[4].getText() == "X" && bt[8].getText() == "X") 
+				||(bt[6].getText() == "O" && bt[4].getText() == "X" && bt[2].getText() == "X")) {
+			JOptionPane.showMessageDialog(null, "O Ganhou !!!");
+			
+			limpar();
+			
+			}		
+	}
+	public void limpar() {
+		
+		for (int i = 0; i <9; i++) {
+			bt[i].setText("");
+			click[i] = false;
+		}
 	}
 	
 	
