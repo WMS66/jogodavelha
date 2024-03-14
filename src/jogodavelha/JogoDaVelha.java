@@ -125,6 +125,23 @@ public class JogoDaVelha extends JFrame{
 		}
 	}
 
+	public void ganhou() {
+	if ((bt[0].getText() == "X" && bt[1].getText() == "X" && bt[2].getText() == "X") 
+			||(bt[3].getText() == "X" && bt[4].getText() == "X" && bt[5].getText() == "X") 
+			||(bt[6].getText() == "X" && bt[7].getText() == "X" && bt[8].getText() == "X")
+			||(bt[0].getText() == "X" && bt[3].getText() == "X" && bt[6].getText() == "X") 
+			||(bt[1].getText() == "X" && bt[4].getText() == "X" && bt[7].getText() == "X") 
+			||(bt[2].getText() == "X" && bt[5].getText() == "X" && bt[8].getText() == "X") 
+			||(bt[0].getText() == "X" && bt[4].getText() == "X" && bt[8].getText() == "X") 
+			||(bt[6].getText() == "X" && bt[4].getText() == "X" && bt[2].getText() == "X")) {
+		JOptionPane.showMessageDialog(null, "X ganhou !!!");
+		
+		
+	}	
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new JogoDaVelha();
