@@ -1,4 +1,5 @@
 package jogodavelha;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 
 import javax.swing.*;
@@ -23,6 +24,7 @@ public class JogoDaVelha extends JFrame{
 				bt[cont] = new JButton();
 				add(bt[cont]);
 				bt[cont].setBounds((100 * i)+50, (100 * j)+50, 95, 95);
+				bt[cont].setFont(new Font("verdana", Font.BOLD, 50));
 				cont++;
 			}
 		}
