@@ -7,13 +7,14 @@ import javax.swing.*;
 public class JogoDaVelha extends JFrame{
 	
 	JButton[] bt = new JButton[9];
-	
 	JLabel placar = new JLabel("PLACAR");
 	JLabel pontoX = new JLabel("X O");
 	JLabel pontoO = new JLabel("O O");
+	JButton novo = new JButton("Novo jogo");
+	JButton zerar = new JButton("Zerar o placar");
+
 	int PontoX = 0;
 	int PontoO = 0;
-	
 	boolean xo = false;
 	boolean[] click = new boolean[9];
 	
@@ -28,10 +29,30 @@ public class JogoDaVelha extends JFrame{
 		add(placar);
 		add(pontoX);
 		add(pontoO);
+		add(novo);
+		add(zerar);
 		
 		placar.setBounds(425,50,100,30);
 		pontoX.setBounds(400,75,100,30);
 		pontoO.setBounds(450,75,100,30);
+		novo.setBounds(410,130,140,30);
+		zerar.setBounds(410,180,140,30);
+		
+		novo.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				limpar();
+			}
+		});
+		
+		zerar.addActionListener(new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				PontoX = 0;
+				PontoO = 0;
+				atualizar();
+			}
+		});
 		
 		int cont = 0;
 		for (int i=0; i < 3; i++) {
@@ -56,6 +77,7 @@ public class JogoDaVelha extends JFrame{
 				}
 			}
 		});
+		
 		bt[1].addActionListener(new java.awt.event.ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
