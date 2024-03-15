@@ -2,7 +2,7 @@
 out
 .classpath
 .project
-.settings
+/.settings
 .metadata
 *.log
 *.zip
@@ -11,6 +11,6 @@ out
 target
 classes
 build
-bin
+/bin
 classes
 *~
