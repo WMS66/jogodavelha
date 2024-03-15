@@ -7,6 +7,13 @@ import javax.swing.*;
 public class JogoDaVelha extends JFrame{
 	
 	JButton[] bt = new JButton[9];
+	
+	JLabel placar = new JLabel("PLACAR");
+	JLabel pontoX = new JLabel("X O");
+	JLabel pontoO = new JLabel("O O");
+	int PontoX = 0;
+	int PontoO = 0;
+	
 	boolean xo = false;
 	boolean[] click = new boolean[9];
 	
@@ -17,8 +24,16 @@ public class JogoDaVelha extends JFrame{
 		setDefaultCloseOperation(3);
 		setLayout(null);
 		setBounds(350,150,800,600);
-		int cont = 0;
 		
+		add(placar);
+		add(pontoX);
+		add(pontoO);
+		
+		placar.setBounds(425,50,100,30);
+		pontoX.setBounds(400,75,100,30);
+		pontoO.setBounds(450,75,100,30);
+		
+		int cont = 0;
 		for (int i=0; i < 3; i++) {
 			for (int j =0; j < 3; j++) {
 				bt[cont] = new JButton();
@@ -125,6 +140,11 @@ public class JogoDaVelha extends JFrame{
 		}
 		ganhou();
 	}
+	
+	public void atualizar() {
+		pontoX.setText("X " + PontoX);
+		pontoO.setText("O " + PontoO);
+	}
 
 	public void ganhou() {
 		int cont = 0;
@@ -142,6 +162,8 @@ public class JogoDaVelha extends JFrame{
 			||(bt[0].getText() == "X" && bt[4].getText() == "X" && bt[8].getText() == "X") 
 			||(bt[6].getText() == "X" && bt[4].getText() == "X" && bt[2].getText() == "X")) {
 		JOptionPane.showMessageDialog(null, "X Ganhou !!!");
+		PontoX++;
+		atualizar();
 		
 		limpar();
 		
@@ -154,7 +176,8 @@ public class JogoDaVelha extends JFrame{
 				||(bt[0].getText() == "O" && bt[4].getText() == "O" && bt[8].getText() == "O") 
 				||(bt[6].getText() == "O" && bt[4].getText() == "O" && bt[2].getText() == "O")) {
 			JOptionPane.showMessageDialog(null, "O Ganhou !!!");
-			
+			PontoO++;
+			atualizar();
 			limpar();
 			
 			}else if (cont == 9) {
