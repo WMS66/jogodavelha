@@ -212,6 +212,7 @@ public class JogoDaVelha extends JFrame{
 		for (int i = 0; i < 9; i++) {
 			bt[i].setText("");
 			click[i] = false;
+			xo = false;
 		}
 	}
 	
